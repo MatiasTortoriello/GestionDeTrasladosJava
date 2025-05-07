@@ -16,9 +16,13 @@ public class PruebaSistema {
 
         MenuPrincipal opcion;
         do {
+        	
             opcion = ingresarOpcionDelMenuPrincipalValidada(sc);
+            
             switch (opcion) {
+            
                 case AGREGAR_DESTINO:
+                	
                     if (agregarNuevoDestino(sistema, sc)) {
                         System.out.println("Destino agregado correctamente.");
                     } else {
@@ -26,6 +30,7 @@ public class PruebaSistema {
                     }
                     break;
                 case AGREGAR_VIAJE:
+                	
                     if (agregarViaje(sistema, sc)) {
                         System.out.println("El viaje se agregó correctamente.");
                     } else {
@@ -33,9 +38,11 @@ public class PruebaSistema {
                     }
                     break;
                 case VER_RESUMEN:
+                	
                     verResumen(sistema);
                     break;
                 case SALIR:
+                	
                     System.out.println("Finalizando el programa. ¡Hasta luego!");
                     break;
             }

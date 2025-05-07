@@ -27,4 +27,5 @@ public class Destino {
     public String toString() {
         return "Destino [Código=" + codigo + ", Ciudad=" + ciudad + ", Distancia=" + distancia + " km]";
     }
+    
 }
