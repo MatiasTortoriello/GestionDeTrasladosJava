@@ -28,4 +28,5 @@ public class Destino {
         return "Destino [Código=" + codigo + ", Ciudad=" + ciudad + ", Distancia=" + distancia + " km]";
     }
     
+    
 }
