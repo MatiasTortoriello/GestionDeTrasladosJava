@@ -8,7 +8,30 @@ class PruebaSistema {
 
 	@Test
 	void test() {
+ /*Será la clase que contenga al método main y deberemos desarrollar lo siguiente para garantizar el correcto funcionamiento:
+    Para iniciar el sistema, el usuario debe ingresar un número de gestión. 
+	Este número debe comenzar con el carácter especial #. 
+	El sistema deberá verificar que el número ingresado cumpla con esta condición. 
+	En caso contrario, se solicitará nuevamente hasta que el usuario ingrese un número de gestión válido.
 
+@Test
+	
+
+Casos a examinar:
+
+AGREGAR_DESTINO: * Se debe agregar un nuevo destino para el traslado. 
+Si el destino se agrega correctamente, el sistema deberá mostrar el mensaje: 
+“Destino agregado correctamente". En caso de error, se deberá mostrar el mensaje: "No se pudo agregar el destino".
+
+AGREGAR_VIAJE: * Se debe agregar un viaje según el traslado determinado. 
+Si la operación se realiza con éxito, el sistema deberá mostrar el mensaje: 
+"El viaje se agregó correctamente". En caso de error, se deberá mostrar el mensaje: "No se pudo agregar el viaje".
+
+VER_RESUMEN: * Una vez asignados los viajes a sus respectivos destinos, 
+se deberá generar y mostrar un resumen de la información que se podrá consultar en todo momento para visualizar la información actual.*/
+	
+	
+	
 	}
 
 }
