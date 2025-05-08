@@ -4,19 +4,25 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import gestionDeTrasladosDominio.UsuarioClass;
+
 class PruebaSistema {
 
 	@Test
 	void test() {
- /*Será la clase que contenga al método main y deberemos desarrollar lo siguiente para garantizar el correcto funcionamiento:
+ /*
     Para iniciar el sistema, el usuario debe ingresar un número de gestión. 
 	Este número debe comenzar con el carácter especial #. 
 	El sistema deberá verificar que el número ingresado cumpla con esta condición. 
-	En caso contrario, se solicitará nuevamente hasta que el usuario ingrese un número de gestión válido.
+	En caso contrario, se solicitará nuevamente hasta que el usuario ingrese un número de gestión válido.*/
 
-@Test
+	}
 	
-
+	@Test
+	public void queElUsuarioPuedaIngresarUnNumeroDeGestion() {
+		UsuarioClass nuevoUsuario = new UsuarioClass();
+	}
+/*
 Casos a examinar:
 
 AGREGAR_DESTINO: * Se debe agregar un nuevo destino para el traslado. 
@@ -31,7 +37,5 @@ VER_RESUMEN: * Una vez asignados los viajes a sus respectivos destinos,
 se deberá generar y mostrar un resumen de la información que se podrá consultar en todo momento para visualizar la información actual.*/
 	
 	
-	
-	}
 
 }
