@@ -1,5 +1,5 @@
 package gestionDeTrasladosDominio;
 
-public class AutoClass {
-	
+public class VehiculoClass {
+
 }
