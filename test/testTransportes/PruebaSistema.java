@@ -36,7 +36,7 @@ class PruebaSistema {
 	}
 	
 
-	/*
+		/*
 	AGREGAR_DESTINO: * Se debe agregar un nuevo destino para el traslado. 
 	Si el destino se agrega correctamente, el sistema deberá mostrar el mensaje: 
 	“Destino agregado correctamente". En caso de error, se deberá mostrar el mensaje: "No se pudo agregar el destino".*/
