@@ -6,6 +6,6 @@ public class BicicletaClass extends VehiculoClass {
 	
 	public void BicicletaClass(String tipoBicicleta) {
 		this.tipoBicicleta = tipoBicicleta;
-		super();
+		
 	}
 }
