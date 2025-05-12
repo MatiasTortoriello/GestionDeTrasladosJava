@@ -10,8 +10,8 @@ public class GestionDeTrasladoClass {
 	// La cantidad de destinos totales esta predeterminado en 20 y para los viajes
 	// sera de 50.
 	private String numeroDeGestion;
-	private double costoMinimo;
-	private double costoPorKm;
+	private Double costoMinimo;
+	private Double costoPorKm;
 
 	/***
 	 * El constructor debe realizar todas las acciones necesarias para garantizar el
@@ -21,8 +21,36 @@ public class GestionDeTrasladoClass {
 	 * @param minimo - Este es el costo minimo de viaje
 	 * @param nombre - Este es el costo por Km
 	 */
-	public GestionDeTrasladoClass(String numeroDeGestion, double costoMinimo, double costoPorKm) {
+	public GestionDeTrasladoClass(String numeroDeGestion, Double costoMinimo, Double costoPorKm) {
 	}
+	
+	////////////////////GETTERS Y SETTERS/////////////////////////
+	
+	public String getNumeroDeGestion() {
+		return numeroDeGestion;
+	}
+
+	public void setNumeroDeGestion(String numeroDeGestion) {
+		this.numeroDeGestion = numeroDeGestion;
+	}
+
+	public Double getCostoMinimo() {
+		return costoMinimo;
+	}
+
+	public void setCostoMinimo(Double costoMinimo) {
+		this.costoMinimo = costoMinimo;
+	}
+
+	public Double getCostoPorKm() {
+		return costoPorKm;
+	}
+
+	public void setCostoPorKm(Double costoPorKm) {
+		this.costoPorKm = costoPorKm;
+	}
+
+	
 
 	/***
 	 * Agrega una nuevo destino
@@ -37,13 +65,14 @@ public class GestionDeTrasladoClass {
 
 	}
 
+	
 	/***
 	 * Buscar un destino
 	 * 
 	 * @param codigo del destino buscado
 	 * @return Destino (null si no existe)
 	 */
-	public DestinoClass buscarDestino(int codigo) {
+	public DestinoClass buscarDestino(Integer codigo) {
 
 		return null;
 	}

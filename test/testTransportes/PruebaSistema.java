@@ -7,8 +7,15 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 
 import gestionDeTrasladosDominio.UsuarioClass;
+import gestionDeTrasladosEnums.MenuPrincipalEnum;
 
 class PruebaSistema {
+	
+	MenuPrincipalEnum opcion = null;
+	Double costoMinimo;
+	Double costoPorKm;
+	String numeroDeGestion;
+	
 
 	@Test
 	void test() {
