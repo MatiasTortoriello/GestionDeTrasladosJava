@@ -11,6 +11,8 @@ public class GestionDeTrasladoClass {
 	// sera de 50.
 	
 	//private final Double PRECIOPORKILOMETRO = 100.00;
+	private final Integer CANTIDAD_DE_DESTINOS_TOTALES = 20;
+	private final Integer CANTIDAD_DE_VIAJES_TOTALES = 50;
 	private String numeroDeGestion;
 	private Double costoMinimo;
 	private Double costoPorKm;
@@ -24,6 +26,9 @@ public class GestionDeTrasladoClass {
 	 * @param nombre - Este es el costo por Km
 	 */
 	public GestionDeTrasladoClass(String numeroDeGestion, Double costoMinimo, Double costoPorKm) {
+		this.numeroDeGestion = numeroDeGestion;
+		this.costoMinimo = costoMinimo;
+		this.costoPorKm = costoPorKm;
 	}
 	
 	////////////////////GETTERS Y SETTERS/////////////////////////
