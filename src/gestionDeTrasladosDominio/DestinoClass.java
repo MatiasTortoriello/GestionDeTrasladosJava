@@ -1,6 +1,7 @@
 package gestionDeTrasladosDominio;
 
 public class DestinoClass {
+	private final Double PRECIOPORKILOMETRO = 100.00;
 	private Integer codigo;
 	private String ciudad;
 	private String pais;
@@ -48,6 +49,15 @@ public class DestinoClass {
 	public void setDistancia(Double distancia) {
 		this.distancia = distancia;
 	}
+	
+	public double calcularCosto(Double distancia) {
+	    return distancia * PRECIOPORKILOMETRO;
+	}
+	
+    @Override
+    public String toString() {
+        return "Destino [Código=" + codigo + ", Ciudad=" + ciudad + ", Distancia=" + distancia + " km]";
+    }
 	
 	
 }
