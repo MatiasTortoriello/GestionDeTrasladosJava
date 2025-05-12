@@ -9,6 +9,8 @@ public class GestionDeTrasladoClass {
 	 */
 	// La cantidad de destinos totales esta predeterminado en 20 y para los viajes
 	// sera de 50.
+	
+	//private final Double PRECIOPORKILOMETRO = 100.00;
 	private String numeroDeGestion;
 	private Double costoMinimo;
 	private Double costoPorKm;
@@ -125,6 +127,10 @@ public class GestionDeTrasladoClass {
 
 		return null;
 	}
+	
+	/*public double calcularCosto(Double distancia) {
+    return distancia * PRECIOPORKILOMETRO;
+	}*/
 
 	/****
 	 * Devuelve en formato String un resumen de los viajes realizados Ordenados por
