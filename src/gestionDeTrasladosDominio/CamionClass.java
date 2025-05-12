@@ -1,5 +1,5 @@
 package gestionDeTrasladosDominio;
 
-public class CamionClass {
+public class CamionClass extends VehiculoClass {
 
 }
