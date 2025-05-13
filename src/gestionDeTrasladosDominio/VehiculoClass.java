@@ -1,10 +1,13 @@
 package gestionDeTrasladosDominio;
 
-public class VehiculoClass {
+import java.security.KeyStore.TrustedCertificateEntry;
+
+public abstract class VehiculoClass {
 	public String patente;
 	public String marca;
 	public String modelo;
 	public Double pesoTotalQuePuedeLlevar;
+	public Double volumenTotalQuePuedeLlevar;
 	
 	public VehiculoClass (String patente, String marca, String modelo, Double pesoTotalQuePuedeLlevar) {
 		this.patente = patente;
@@ -52,6 +55,18 @@ public class VehiculoClass {
 	protected void setPesoTotalQuePuedeLlevar(Double pesoTotalQuePuedeLlevar) {
 		this.pesoTotalQuePuedeLlevar = pesoTotalQuePuedeLlevar;
 	}
+	
+	public Double getVolumenTotalQuePuedeLlevar() {
+		return volumenTotalQuePuedeLlevar;
+	}
+
+	public void setVolumenTotalQuePuedeLlevar(Double volumenTotalQuePuedeLlevar) {
+		this.volumenTotalQuePuedeLlevar = volumenTotalQuePuedeLlevar;
+	}
+
+	////////////OTROS METODOS/////////////////
+	protected abstract boolean puedeCargar(PaqueteClass paquete);
+	public abstract void agregarPaqueteAlEnvio(PaqueteClass paquete);
 	
 	@Override
 	public String toString() {
