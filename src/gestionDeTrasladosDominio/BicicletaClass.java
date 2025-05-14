@@ -50,20 +50,10 @@ public class BicicletaClass extends VehiculoClass{
 	
 	@Override
 	public void agregarPaqueteAlEnvio(PaqueteClass paquete) {
-
-		/*Paquete[] agregarPaquetesAlArray = new Paquete[MAX_CANTIDAD_PAQUETES];
-		 		
-		 for (int i = 0 ; i < arrayDePaquetes.length ; i++){
-			 if(existePaquete(paquete) != true) {
-			 agregarPaquetesAlArray[MAX_CANTIDAD_PAQUETES-i-1] = paquete;
-		 
-			if((arrayDePaquetes[i] != agregarPaquetesAlArray[i])){				
-					arrayDePaquetes[MAX_CANTIDAD_PAQUETES-i-1] = paquete;
-					
-				}else if(arrayDePaquetes[i] != null) {
-				}
-			}
-		}*/
+		
+		if (!listaDePaquetes.contains(paquete) && listaDePaquetes.size() < MAX_CANTIDAD_PAQUETES) {
+			listaDePaquetes.add(paquete);
+		}
 	}
 	
 	

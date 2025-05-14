@@ -10,5 +10,17 @@ public class AutoClass extends VehiculoClass {
 		super(patente, marca, modelo, pesoTotalQuePuedeLlevar);
 		this.tipoDeAuto = tipoDeAuto;
 	}
+
+	@Override
+	protected boolean puedeCargar(PaqueteClass paquete) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void agregarPaqueteAlEnvio(PaqueteClass paquete) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
