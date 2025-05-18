@@ -8,7 +8,7 @@ import gestionDeTrasladosDominio.VehiculoClass;
 import gestionDeTrasladosDominio.ViajeClass;
 
 public class GestionDeTrasladoClass {
-
+	private Integer numeroDeGestion
     private ArrayList<VehiculoClass> listaVehiculos;
     private HashSet<Integer> paquetesAsignados;
     

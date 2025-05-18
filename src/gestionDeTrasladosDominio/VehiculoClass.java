@@ -1,29 +1,31 @@
 package gestionDeTrasladosDominio;
 
 import java.security.KeyStore.TrustedCertificateEntry;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class VehiculoClass {
-	public String patente;
-	public String marca;
-	public String modelo;
-	public Double pesoTotalQuePuedeLlevar;
-	public Double volumenTotalQuePuedeLlevar;
 	
-	public VehiculoClass (String patente, String marca, String modelo, Double pesoTotalQuePuedeLlevar) {
+	 protected List<PaqueteClass> paquetes = new ArrayList<>();
+	
+	/*public VehiculoClass (String patente, String marca, String modelo, Double pesoTotalQuePuedeLlevar) {
 		this.patente = patente;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.pesoTotalQuePuedeLlevar = pesoTotalQuePuedeLlevar;
-	}
+	}*/
 	
 	public VehiculoClass() {
 		
 	}
 	
-
 	 ///GETTERS Y SETTERS ////
+	
+	public List<PaqueteClass> getPaquetes() {
+        return paquetes;
+    }
 	 
-
+	/*
 	protected String getPatente() {
 		return patente;
 	}
@@ -63,18 +65,22 @@ public abstract class VehiculoClass {
 	public void setVolumenTotalQuePuedeLlevar(Double volumenTotalQuePuedeLlevar) {
 		this.volumenTotalQuePuedeLlevar = volumenTotalQuePuedeLlevar;
 	}
-
+*/
 	////////////OTROS METODOS/////////////////
-	protected abstract boolean puedeCargar(PaqueteClass paquete);
-	public abstract void agregarPaqueteAlEnvio(PaqueteClass paquete);
+		
+	public abstract boolean puedeTransportarPaquete(PaqueteClass paquete);
 	
-	@Override
-	public String toString() {
-		return marca + modelo;
+	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
+        if (puedeTransportarPaquete(nuevoPaquete)) {
+            paquetes.add(nuevoPaquete);
+            return true;
+        }
+        return false;
 	}
 	
 	
-
+	public abstract void agregarPaqueteAlEnvio(PaqueteClass paquete);
+		
 }
 
 
