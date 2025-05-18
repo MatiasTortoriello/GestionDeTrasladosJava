@@ -1,34 +1,20 @@
-package gestionDeTrasladosDominio;
+package gestionDeTrasladosInterfaz;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import gestionDeTrasladosDominio.DestinoClass;
+import gestionDeTrasladosDominio.VehiculoClass;
+import gestionDeTrasladosDominio.ViajeClass;
 
 public class GestionDeTrasladoClass {
 
-	/***
-	 * Se deben agregar todos los atributos, setters y getters que se requieran para
-	 * desarrollar la aplicacion.
-	 */
-	// La cantidad de destinos totales esta predeterminado en 20 y para los viajes
-	// sera de 50.
-	
-	//private final Double PRECIOPORKILOMETRO = 100.00;
-	private final Integer CANTIDAD_DE_DESTINOS_TOTALES = 20;
-	private final Integer CANTIDAD_DE_VIAJES_TOTALES = 50;
-	private String numeroDeGestion;
-	private Double costoMinimo;
-	private Double costoPorKm;
-
-	/***
-	 * El constructor debe realizar todas las acciones necesarias para garantizar el
-	 * correcto funcionamiento
-	 * 
-	 * @param nombre - Este es el nombre del sistema
-	 * @param minimo - Este es el costo minimo de viaje
-	 * @param nombre - Este es el costo por Km
-	 */
-	public GestionDeTrasladoClass(String numeroDeGestion, Double costoMinimo, Double costoPorKm) {
-		this.numeroDeGestion = numeroDeGestion;
-		this.costoMinimo = costoMinimo;
-		this.costoPorKm = costoPorKm;
+    private ArrayList<VehiculoClass> listaVehiculos;
+    private HashSet<Integer> paquetesAsignados;
+    
+	public GestionDeTrasladoClass() {
+        listaVehiculos = new ArrayList<>();
+        paquetesAsignados = new HashSet<>();
 	}
 	
 	////////////////////GETTERS Y SETTERS/////////////////////////

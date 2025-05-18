@@ -6,15 +6,9 @@ import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
 
-import gestionDeTrasladosDominio.UsuarioClass;
 import gestionDeTrasladosEnums.MenuPrincipalEnum;
 
 class PruebaSistema {
-	
-	MenuPrincipalEnum opcion = null;
-	Double costoMinimo;
-	Double costoPorKm;
-	String numeroDeGestion;
 	
 
 	@Test
@@ -25,14 +19,6 @@ class PruebaSistema {
 	El sistema deberá verificar que el número ingresado cumpla con esta condición. 
 	En caso contrario, se solicitará nuevamente hasta que el usuario ingrese un número de gestión válido.*/
 
-	}
-	
-	@Test
-	public void queElUsuarioPuedaIngresarUnNumeroDeGestion() {
-		Scanner teclado = new Scanner(System.in);
-		UsuarioClass nuevoUsuario = new UsuarioClass("Matias", "Tortoriello", 35533516);
-		String numeroDeGestion = teclado.next();
-		
 	}
 	
 
