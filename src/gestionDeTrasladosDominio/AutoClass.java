@@ -8,15 +8,13 @@ public class AutoClass extends VehiculoClass {
 	private TipoDeAuto tipoDeAuto;
 	
 	public AutoClass(TipoDeAuto tipoDeAuto) {
-		super(2.0, 500.0);
+		super(2.0, 500.0, 2);
 		this.tipoDeAuto = tipoDeAuto;
 	}
 	
-	
-
 	@Override
-	protected boolean puedeCargar(PaqueteClass paquete) {
-		// TODO Auto-generated method stub
+	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
+
 		return false;
 	}
 
@@ -25,13 +23,14 @@ public class AutoClass extends VehiculoClass {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
-	@Override
-	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
+	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
+        if (puedeTransportarPaquete(nuevoPaquete)) {
+            paquetes.add(nuevoPaquete);
+            return true;
+        }
+        return false;
+	}
+
+
 }
