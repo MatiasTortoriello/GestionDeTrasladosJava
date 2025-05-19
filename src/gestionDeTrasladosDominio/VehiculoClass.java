@@ -6,6 +6,10 @@ import java.util.List;
 
 public abstract class VehiculoClass {
 	
+	protected final Double volumenDeCargaTotal;
+	protected final Double pesoDeCargaTotal;
+	//protected final Integer ciudadesMaximasQueRecorre;
+	
 	 protected List<PaqueteClass> paquetes = new ArrayList<>();
 	
 	/*public VehiculoClass (String patente, String marca, String modelo, Double pesoTotalQuePuedeLlevar) {
@@ -15,8 +19,10 @@ public abstract class VehiculoClass {
 		this.pesoTotalQuePuedeLlevar = pesoTotalQuePuedeLlevar;
 	}*/
 	
-	public VehiculoClass() {
-		
+	public VehiculoClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal /*Integer ciudadesMaximasQueRecorre*/) {
+		this.volumenDeCargaTotal = volumenDeCargaTotal;
+		this.pesoDeCargaTotal = pesoDeCargaTotal;
+		//this.ciudadesMaximasQueRecorre = ciudadesMaximasQueRecorre;
 	}
 	
 	 ///GETTERS Y SETTERS ////
