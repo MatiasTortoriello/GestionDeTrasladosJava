@@ -13,23 +13,15 @@ public class AutoClass extends VehiculoClass {
 		super(tipoDeAuto.getVolumenMaximo(), 
 				tipoDeAuto.getPesoMaximo(), 
 				tipoDeAuto.getCantidadMaximaPaquetes(), 
-				500); //Volumen y peso totales. Maximo de ciudades que recorre y cantidad de paquetes máximos. Heredados de VehiculoClass
+				tipoDeAuto.getCantidadMaximaDeCiudades()); //Volumen y peso totales. Maximo de ciudades que recorre y cantidad de paquetes máximos. Heredados de VehiculoClass
 		this.tipoDeAuto = tipoDeAuto;
 	}
-	
+
 	@Override
 	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
-
+		// TODO Auto-generated method stub
 		return false;
 	}
-
 	
-	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
-        if (puedeTransportarPaquete(nuevoPaquete)) {
-            paquetes.add(nuevoPaquete);
-            return true;
-        }
-        return false;
-	}
 	
 }

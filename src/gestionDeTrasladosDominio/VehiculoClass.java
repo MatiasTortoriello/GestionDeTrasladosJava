@@ -75,7 +75,9 @@ public abstract class VehiculoClass {
 */
 	////////////OTROS METODOS/////////////////
 		
-	public abstract boolean puedeTransportarPaquete(PaqueteClass paquete);
+	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
+		return true;
+	}
 	
 	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
         if (puedeTransportarPaquete(nuevoPaquete)) {

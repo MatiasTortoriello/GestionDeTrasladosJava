@@ -11,13 +11,42 @@ class AutoTest {
 
 	}
 	
+	//Test de creación de los tres tipos de autos:
+	
 	@Test
-	void queSePuedaCrearUnAuto() {
+	void queSePuedaCrearUnAutoSedan() {
 		
 	}
 	
 	@Test
+	void queSePuedaCrearUnAutoCoupe() {
+		
+	}
+	
+	@Test
+	void queSePuedaCrearUnAutoSuv() {
+		
+	}
+	
+	//Test de carga de paquetes en los tres tipos de autos:
+	
+	@Test
 	void queSePuedanCargarPaquetesEnElAuto() {
+		
+	}
+	
+	@Test
+	void queNoSePuedanCargarMasPaquetesDeLosPermitidosEnUnSedan() {
+		
+	}
+	
+	@Test
+	void queNoSePuedanCargarMasPaquetesDeLosPermitidosEnUnCoupe() {
+		
+	}
+	
+	@Test
+	void queNoSePuedanCargarMasPaquetesDeLosPermitidosEnUnSuv() {
 		
 	}
  

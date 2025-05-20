@@ -2,30 +2,25 @@ package gestionDeTrasladosInterfaz;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Set;
 
 import gestionDeTrasladosDominio.VehiculoClass;
 import gestionDeTrasladosDominio.ViajeClass;
 
 public class GestionDeTrasladoClass {
-	private String numeroDeGestion;
-    private ArrayList<VehiculoClass> listaVehiculos;
-    private HashSet<Integer> paquetesAsignados;
+	
+    private Set<VehiculoClass> listaVehiculos = new HashSet<>();
+    private Set<Integer> paquetesAsignados = new HashSet<>();
     
-	public GestionDeTrasladoClass() {
-        listaVehiculos = new ArrayList<>();
+    
+    
+	/*public GestionDeTrasladoClass() {
+        listaVehiculos = new HashSet<>();
         paquetesAsignados = new HashSet<>();
-	}
+	}*/
 	
 	////////////////////GETTERS Y SETTERS/////////////////////////
 	
-	public String getNumeroDeGestion() {
-		return numeroDeGestion;
-	}
-
-	public void setNumeroDeGestion(String numeroDeGestion) {
-		this.numeroDeGestion = numeroDeGestion;
-	}
-
 
 
 	
