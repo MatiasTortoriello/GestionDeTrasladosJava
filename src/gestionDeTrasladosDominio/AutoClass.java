@@ -10,7 +10,10 @@ public class AutoClass extends VehiculoClass {
 	private TipoDeAuto tipoDeAuto;
 	
 	public AutoClass(TipoDeAuto tipoDeAuto) {
-		super(tipoDeAuto.getVolumenMaximo(), tipoDeAuto.getPesoMaximo(), tipoDeAuto.getCantidadMaximaPaquetes(), 500);
+		super(tipoDeAuto.getVolumenMaximo(), 
+				tipoDeAuto.getPesoMaximo(), 
+				tipoDeAuto.getCantidadMaximaPaquetes(), 
+				500); //Volumen y peso totales. Maximo de ciudades que recorre y cantidad de paquetes máximos. Heredados de VehiculoClass
 		this.tipoDeAuto = tipoDeAuto;
 	}
 	

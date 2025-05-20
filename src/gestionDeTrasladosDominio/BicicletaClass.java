@@ -9,9 +9,10 @@ public class BicicletaClass extends VehiculoClass{
 
 	private TipoBicicleta tipoBicicleta;
 	//Hereda el List Paquetes
+	
 	BicicletaClass(TipoBicicleta tipoBicicleta) {
 		//super(maxVolumenDeCarga, maxPesoDeCarga, maxCiudadesQueRecorre);
-		super(0.125, 15.0, 1, 2); //Volumen y peso totales. Maximo de ciudades que recorre . Heredados de VehiculoClass
+		super(0.125, 15.0, 1, 2); //Volumen y peso totales. Maximo de ciudades que recorre y cantidad de paquetes máximos. Heredados de VehiculoClass
 		tipoBicicleta = this.tipoBicicleta;
 	}
 	

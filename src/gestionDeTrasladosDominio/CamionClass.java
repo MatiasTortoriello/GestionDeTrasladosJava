@@ -1,9 +1,18 @@
 package gestionDeTrasladosDominio;
 
+import gestionDeTrasladosEnums.TipoDeAcoplado;
+import gestionDeTrasladosEnums.TipoDeAuto;
+
 public class CamionClass extends VehiculoClass {
 
-	public CamionClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal, Integer maxCiudadesQueRecorre) {
-		super(0.125, 15.0, 1, 2000); //Volumen y peso totales. Maximo de ciudades que recorre . Heredados de VehiculoClass
+	private TipoDeAcoplado tipoDeAcoplado;
+	
+	public CamionClass(TipoDeAcoplado tipoDeAcoplado) {
+		super(tipoDeAcoplado.getVolumenMaximo(), 
+				tipoDeAcoplado.getPesoMaximo(), 
+				tipoDeAcoplado.getCantidadMaximaPaquetes(), 
+				500); //Volumen y peso totales. Maximo de ciudades que recorre y cantidad de paquetes máximos. Heredados de VehiculoClass
+		this.tipoDeAcoplado = tipoDeAcoplado;
 	}
 
 
