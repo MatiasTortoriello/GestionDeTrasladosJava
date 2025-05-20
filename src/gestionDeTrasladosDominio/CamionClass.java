@@ -7,16 +7,19 @@ public class CamionClass extends VehiculoClass {
 	}
 
 
-	@Override
-	public void agregarPaqueteAlEnvio(PaqueteClass paquete) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
+        if (puedeTransportarPaquete(nuevoPaquete)) {
+            paquetes.add(nuevoPaquete);
+            return true;
+        }
+        return false;
 	}
 
 }

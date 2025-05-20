@@ -22,9 +22,6 @@ public class BicicletaClass extends VehiculoClass{
 		return false;
 	}
 
-	@Override
-	public void agregarPaqueteAlEnvio(PaqueteClass paquete) {		
-	}
 	
 	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
         if (puedeTransportarPaquete(nuevoPaquete)) {

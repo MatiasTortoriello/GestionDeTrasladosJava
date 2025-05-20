@@ -10,5 +10,16 @@ class AutoTest {
 	void test() {
 
 	}
+	
+	@Test
+	void queSePuedaCrearUnAuto() {
+		
+	}
+	
+	@Test
+	void queSePuedanCargarPaquetesEnElAuto() {
+		
+	}
+ 
 
 }

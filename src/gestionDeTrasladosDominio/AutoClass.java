@@ -20,11 +20,6 @@ public class AutoClass extends VehiculoClass {
 		return false;
 	}
 
-	@Override
-	public void agregarPaqueteAlEnvio(PaqueteClass paquete) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
         if (puedeTransportarPaquete(nuevoPaquete)) {

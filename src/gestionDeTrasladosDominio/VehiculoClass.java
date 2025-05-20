@@ -86,7 +86,7 @@ public abstract class VehiculoClass {
 	}
 	
 	
-	public abstract void agregarPaqueteAlEnvio(PaqueteClass paquete);
+
 		
 }
 
