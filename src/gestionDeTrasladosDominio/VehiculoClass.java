@@ -8,7 +8,7 @@ public abstract class VehiculoClass {
 	
 	protected final Double volumenDeCargaTotal;
 	protected final Double pesoDeCargaTotal;
-
+	protected final Integer maxCantidadPaquetes;
 	protected final Integer maxCiudadesQueRecorre;
 	protected List<PaqueteClass> paquetes = new ArrayList<>();
 	
@@ -19,11 +19,11 @@ public abstract class VehiculoClass {
 		this.pesoTotalQuePuedeLlevar = pesoTotalQuePuedeLlevar;
 	}*/
 	
-	public VehiculoClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal, Integer maxCiudadesQueRecorre) {
+	public VehiculoClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal, Integer maxCantidadPaquetes, Integer maxCiudadesQueRecorre) {
 		this.volumenDeCargaTotal = volumenDeCargaTotal;
 		this.pesoDeCargaTotal = pesoDeCargaTotal;
 		this.maxCiudadesQueRecorre = maxCiudadesQueRecorre;
-
+		this.maxCantidadPaquetes = maxCantidadPaquetes;
 	}
 	
 	 ///GETTERS Y SETTERS ////

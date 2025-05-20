@@ -1,5 +1,7 @@
 package gestionDeTrasladosEnums;
 
 public enum TipoBicicleta {
-	Playera, MountainBike, Tradicional
+	Playera, 
+	MountainBike, 
+	Tradicional
 }

@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class PaqueteClass {
 	
-    private Double altoPaquete;
+    private Double alturaPaquete;
     private Double anchoPaquete;
     private Double profundoPaquete;
     private Double pesoPaquete;
     private String destinoPaquete;
 
     public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, String destino) {
-        this.altoPaquete = altura;
+        this.alturaPaquete = altura;
         this.anchoPaquete = ancho;
         this.profundoPaquete = profundidad;
         this.pesoPaquete = peso;
@@ -21,11 +21,11 @@ public class PaqueteClass {
     /////Getters y Setters/////
     ///
     /*public Double getVolumen() {
-    	return (altoPaquete*anchoPaquete)*profundoPaquete;
+    	return (alturaPaquete*anchoPaquete)*profundoPaquete;
     }*/
     
     public Double getVolumen() {
-        return altoPaquete * anchoPaquete * profundoPaquete;
+        return alturaPaquete * anchoPaquete * profundoPaquete;
     }
 
     public Double getPeso() {
