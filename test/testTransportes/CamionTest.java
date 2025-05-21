@@ -4,12 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import gestionDeTrasladosDominio.AutoClass;
 import gestionDeTrasladosDominio.CamionClass;
 import gestionDeTrasladosDominio.DestinoClass;
 import gestionDeTrasladosDominio.PaqueteClass;
 import gestionDeTrasladosEnums.TipoDeAcoplado;
-import gestionDeTrasladosEnums.TipoDeAuto;
 import gestionDeTrasladosInterfaz.GestionDeTrasladoClass;
 
 class CamionTest {
@@ -32,11 +30,9 @@ class CamionTest {
     @Test
     public void quePuedaTransportarUnPaqueteValido() {
     	
-    	 CamionClass tradicional = new CamionClass(TipoDeAcoplado.Tradicional, "AAA111");
-        
+    	CamionClass tradicional = new CamionClass(TipoDeAcoplado.Tradicional, "AAA111");
         DestinoClass destino = new DestinoClass("Juncal", "1129", "Buenos Aires");
-        
-        PaqueteClass paquete = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino);
+        PaqueteClass paquete = new PaqueteClass(01, 1.0, 1.0, 1.0, 3.0, destino);
         
         assertTrue(tradicional.puedeTransportarPaquete(paquete));
     }
@@ -50,7 +46,7 @@ class CamionTest {
 		 
 		 gestion.agregarVehiculo(tradicional);
 		 gestion.agregarVehiculo(remolqueArticulado);
-		 /*Suv no debería agregarse porque tiene la misam patente que Coupé*/
+		 /*RemolqueArticulado no debería agregarse porque tiene la misam patente que Tradicional*/
 		 assertEquals(1, gestion.getVehiculos().size());    
 	}
 	
@@ -59,8 +55,7 @@ class CamionTest {
     	 CamionClass tradicional = new CamionClass(TipoDeAcoplado.Tradicional, "AAA111");
     	 DestinoClass destino1 = new DestinoClass("Juncal", "12", "Buenos Aires");
     	 tradicional.agregarDestino(destino1);*/
-        
-
+       
        /* for (int i = 0; i < 20; i++) {
         	 PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, , destino1); /*Acá tendría que castear a un Double*/
             /*tradicional.asignarPaquete(paqueteMisterioso);
@@ -74,12 +69,10 @@ class CamionTest {
     public void testCamionNoPuedeExcederPesoMaximo() {
     	 CamionClass remolqueArticulado = new CamionClass(TipoDeAcoplado.RemolqueArticulado, "AAB112");
     	 DestinoClass destino1 = new DestinoClass("Juncal", "12", "Buenos Aires");
-         PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 4000.0, destino1);
+         PaqueteClass paqueteMisterioso = new PaqueteClass(01, 1.0, 1.0, 1.0, 4000.0, destino1);
     	
          remolqueArticulado.agregarDestino(destino1);
 
-       
-        assertFalse(remolqueArticulado.puedeTransportarPaquete(paqueteMisterioso));
+         assertFalse(remolqueArticulado.puedeTransportarPaquete(paqueteMisterioso));
     }
-
 }

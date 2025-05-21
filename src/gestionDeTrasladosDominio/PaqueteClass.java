@@ -4,17 +4,17 @@ import java.util.Objects;
 
 public class PaqueteClass {
 	
+	private Integer codigoPaquete;
     private Double alturaPaquete;
     private Double anchoPaquete;
     private Double profundoPaquete;
     private Double pesoPaquete;
     private DestinoClass destinoPaquete;
 
-
-
-
-	public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, DestinoClass destino) {
+    
+    public PaqueteClass(Integer codigoPaquete, Double altura, Double ancho, Double profundidad, Double peso, DestinoClass destino) {
 		
+    	this.codigoPaquete = codigoPaquete;
         this.alturaPaquete = altura;
         this.anchoPaquete = ancho;
         this.profundoPaquete = profundidad;
@@ -29,6 +29,10 @@ public class PaqueteClass {
     	return (alturaPaquete*anchoPaquete)*profundoPaquete;
     }*/
     
+	public Integer getCodigoPaquete() {
+		return this.codigoPaquete;
+	}
+	
     public Double getVolumen() {
         return alturaPaquete * anchoPaquete * profundoPaquete;
     }
@@ -49,9 +53,7 @@ public class PaqueteClass {
 		this.vehiculoAsignado = vehiculoAsignado;
 	}*/
     
-    
-    
-
+   
     //Otros Métodos
     
 
@@ -63,9 +65,7 @@ public class PaqueteClass {
         if (!(objetoPaquete instanceof PaqueteClass)) return false;
         
         PaqueteClass paquete = (PaqueteClass) objetoPaquete;
-        return Double.compare(pesoPaquete, paquete.pesoPaquete) == 0 &&
-               Double.compare(getVolumen(), paquete.getVolumen()) == 0 &&
-               destinoPaquete.equals(paquete.destinoPaquete);
+        return Integer.compare(codigoPaquete, paquete.codigoPaquete) == 0;
     }
 
     @Override
