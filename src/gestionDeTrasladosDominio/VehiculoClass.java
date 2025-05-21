@@ -97,7 +97,8 @@ public abstract class VehiculoClass {
 	}
 		
 	public Boolean puedeTransportarPaquete(PaqueteClass paquete) {
-		
+
+		    
 	    return listaPaquetes.size() < maxCantidadPaquetes &&  //Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.
 	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && //Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.
 	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && //Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.

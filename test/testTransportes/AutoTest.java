@@ -17,7 +17,7 @@ class AutoTest {
 
 	}
 	
-	//Test de creación de los tres tipos de autos:
+	/*Test de creación de los tres tipos de autos:*/
 	
 	@Test
 	void queSePuedanCrearTodosLosTiposDeAuto() {
@@ -47,8 +47,8 @@ class AutoTest {
 		 gestion.agregarVehiculo(coupe);
 		 gestion.agregarVehiculo(sedan);
 		 gestion.agregarVehiculo(suv);
-		 
-		 assertFalse(gestion.getVehiculos().size() == 3);
+		 /*Suv no debería agregarse porque tiene la misam patente que Coupé*/
+		 assertEquals(2, gestion.getVehiculos().size());
 		
 	        
 	}
@@ -64,8 +64,6 @@ class AutoTest {
 		Boolean cargaDePaquete = coupe.asignarPaquete(paqueteMisterioso);
 	
 		assertTrue(cargaDePaquete);
-		
-		
 		
 	}
 	
