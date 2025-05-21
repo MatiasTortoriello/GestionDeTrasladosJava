@@ -38,8 +38,6 @@ class CamionTest {
         
         PaqueteClass paquete = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino);
         
-        
-        
         assertTrue(tradicional.puedeTransportarPaquete(paquete));
     }
     
@@ -53,9 +51,7 @@ class CamionTest {
 		 gestion.agregarVehiculo(tradicional);
 		 gestion.agregarVehiculo(remolqueArticulado);
 		 /*Suv no debería agregarse porque tiene la misam patente que Coupé*/
-		 assertEquals(1, gestion.getVehiculos().size());
-		
-	        
+		 assertEquals(1, gestion.getVehiculos().size());    
 	}
 	
    /*@Test
