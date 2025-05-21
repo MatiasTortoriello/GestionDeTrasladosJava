@@ -43,7 +43,8 @@ public class DestinoClass {
 	    if (destino == null || getClass() != destino.getClass()) return false;
 
 	    DestinoClass otroDestino = (DestinoClass) destino;
-	    return ciudadDestino != null && ciudadDestino.equalsIgnoreCase(otroDestino.ciudadDestino);
+	    return ciudadDestino.equalsIgnoreCase(otroDestino.ciudadDestino);
+	    /*Refiere a si es la misma ciudad en los dos destinos. Ignora mayúsculas*/
 	}
 
 	@Override
