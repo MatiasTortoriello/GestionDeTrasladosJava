@@ -1,9 +1,9 @@
 package gestionDeTrasladosEnums;
 
 public enum TipoBicicleta {
-	Playera(2.0, 5.0, 2, 0), //Volumen - Peso - MaxPaquetes - MaxCiudades
-	MountainBike(3.0, 10.0, 2, 0),
-	Tradicional(4.0, 15.0, 3, 0);
+	Playera(2.0, 5.0, 2, 1), //Volumen - Peso - MaxPaquetes - MaxCiudades
+	MountainBike(3.0, 10.0, 2, 1),
+	Tradicional(4.0, 15.0, 3, 1);
 	
 	private final Double volumenMaximo;
 	private final Double pesoMaximo;

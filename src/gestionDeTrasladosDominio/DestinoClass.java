@@ -36,5 +36,19 @@ public class DestinoClass {
 	public void setCiudadDestino(String ciudadDestino) {
 		this.ciudadDestino = ciudadDestino;
 	}
+	
+	/*@Override
+	public boolean equals(Object obj) {
+	    if (this == obj) return true;
+	    if (obj == null || getClass() != obj.getClass()) return false;
+
+	    DestinoClass other = (DestinoClass) obj;
+	    return ciudadDestino != null && ciudadDestino.equalsIgnoreCase(other.ciudadDestino);
+	}
+
+	@Override
+	public int hashCode() {
+	    return ciudadDestino != null ? ciudadDestino.toLowerCase().hashCode() : 0;
+	}*/
 		
 }

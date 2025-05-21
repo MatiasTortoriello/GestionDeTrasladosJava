@@ -78,7 +78,7 @@ class AutoTest {
 		
 	}
 	
-	void queNoSePuedaExcederElLimiteDeCiudadesEnUnCoupe() {
+	void queNoSePuedaExcederElLimiteDePaquetesEnUnCoupe() {
 		AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
 		
 		DestinoClass destino1 = new DestinoClass("Juncal", "12", "Buenos Aires");

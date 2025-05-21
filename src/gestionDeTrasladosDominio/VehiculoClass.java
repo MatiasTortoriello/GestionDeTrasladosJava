@@ -101,7 +101,7 @@ public abstract class VehiculoClass {
 	    return listaPaquetes.size() < maxCantidadPaquetes &&  //Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.
 	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && //Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.
 	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && //Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.
-	            (destinos.size() < maxCiudadesQueRecorre || destinos.contains(paquete.getDestino())); 
+	            (destinos.size() < maxCiudadesQueRecorre || destinos.contains(paquete.getDestino()));
 		}
 	
 	public Boolean asignarPaquete(PaqueteClass paquete) {
@@ -114,6 +114,19 @@ public abstract class VehiculoClass {
         return false;
 	}
 
+	
+	@Override
+	public boolean equals(Object obj) {
+	    if (this == obj) return true;
+	    if (obj == null || getClass() != obj.getClass()) return false;
+	    VehiculoClass that = (VehiculoClass) obj;
+	    return patenteVehiculo.equals(that.patenteVehiculo);
+	}
+
+	@Override
+	public int hashCode() {
+	    return patenteVehiculo.hashCode();
+	}
 	
 	/*
 	protected String getPatente() {
