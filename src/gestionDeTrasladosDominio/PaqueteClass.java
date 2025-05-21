@@ -8,12 +8,12 @@ public class PaqueteClass {
     private Double anchoPaquete;
     private Double profundoPaquete;
     private Double pesoPaquete;
-    private String destinoPaquete;
+    private DestinoClass destinoPaquete;
     private VehiculoClass vehiculoAsignado;
 
 
 
-	public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, String destino, VehiculoClass vehiculoAsignado) {
+	public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, DestinoClass destino, VehiculoClass vehiculoAsignado) {
         this.alturaPaquete = altura;
         this.anchoPaquete = ancho;
         this.profundoPaquete = profundidad;
@@ -36,7 +36,7 @@ public class PaqueteClass {
         return pesoPaquete;
     }
 
-    public String getDestino() {
+    public DestinoClass getDestino() {
         return destinoPaquete;
     }
     

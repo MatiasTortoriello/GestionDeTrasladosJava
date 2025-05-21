@@ -13,7 +13,7 @@ public abstract class VehiculoClass {
 	protected final Integer maxCantidadPaquetes;
 	protected final Integer maxCiudadesQueRecorre;
 	protected Set<PaqueteClass> listaPaquetes = new HashSet<>();
-	protected Set<String> destinos = new HashSet<>();
+	protected Set<DestinoClass> destinos = new HashSet<>();
 	protected String patenteVehiculo; 
 	
 	/*public VehiculoClass (String patente, String tipo, String marca, String modelo, Double pesoTotalQuePuedeLlevar) {
@@ -41,11 +41,11 @@ public abstract class VehiculoClass {
         return listaPaquetes;
     }
 	
-	public Set<String> getDestinos() {
+	public Set<DestinoClass> getDestinos() {
 		return destinos;
 	}
 
-	public void setDestinos(Set<String> destinos) {
+	public void setDestinos(Set<DestinoClass> destinos) {
 		this.destinos = destinos;
 	}
 
@@ -98,10 +98,9 @@ public abstract class VehiculoClass {
 		
 	public Boolean puedeTransportarPaquete(PaqueteClass paquete) {
 		
-	    return listaPaquetes.size() <= maxCantidadPaquetes &&  //Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.
+	    return listaPaquetes.size() < maxCantidadPaquetes &&  //Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.
 	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && //Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.
 	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && //Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.
-	            (listaPaquetes.contains(paquete)) && //Si el paquete no se encuentra ya dentro de la lista de paquetes
 	            (destinos.size() < maxCiudadesQueRecorre || destinos.contains(paquete.getDestino())); 
 		}
 	

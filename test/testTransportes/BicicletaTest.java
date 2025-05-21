@@ -4,11 +4,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import gestionDeTrasladosDominio.BicicletaClass;
+import gestionDeTrasladosEnums.TipoBicicleta;
+
 class BicicletaTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void queSePuedanCrearTodosLosTiposDeBici() {
+		BicicletaClass mountainBike = new BicicletaClass(TipoBicicleta.MountainBike, "AAA111");
+		
 	}
 
 }
