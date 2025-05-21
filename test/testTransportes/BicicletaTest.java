@@ -19,8 +19,6 @@ class BicicletaTest {
 		BicicletaClass playera = new BicicletaClass(TipoBicicleta.Playera, "AAB112");
 		BicicletaClass tradicional = new BicicletaClass(TipoBicicleta.Tradicional, "AAC113");
 		
-		
-		
 	}
 	
 	@Test
@@ -50,4 +48,13 @@ class BicicletaTest {
 	    
 	    assertTrue(playera.puedeTransportarPaquete(paqueteMuyMisterioso));
 	}
+	
+	void queNoSePuedaCargarMasPesoDelRequeridoEnUnaBici() {
+		BicicletaClass tradicional = new BicicletaClass(TipoBicicleta.Tradicional, "AAA111");
+		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
+		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino, tradicional);
+		
+	}
+	
+	
 }
