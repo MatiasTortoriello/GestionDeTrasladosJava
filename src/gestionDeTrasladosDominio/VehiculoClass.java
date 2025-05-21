@@ -117,11 +117,11 @@ public abstract class VehiculoClass {
 
 	
 	@Override
-	public boolean equals(Object obj) {
-	    if (this == obj) return true;
-	    if (obj == null || getClass() != obj.getClass()) return false;
-	    VehiculoClass that = (VehiculoClass) obj;
-	    return patenteVehiculo.equals(that.patenteVehiculo);
+	public boolean equals(Object vehiculo) {
+	    if (this == vehiculo) return true;
+	    if (vehiculo == null || getClass() != vehiculo.getClass()) return false;
+	    VehiculoClass nuevoVehiculo = (VehiculoClass) vehiculo;
+	    return patenteVehiculo.equals(nuevoVehiculo.patenteVehiculo);
 	}
 
 	@Override
