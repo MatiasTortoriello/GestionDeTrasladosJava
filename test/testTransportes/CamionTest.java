@@ -4,10 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import gestionDeTrasladosDominio.AutoClass;
 import gestionDeTrasladosDominio.CamionClass;
 import gestionDeTrasladosDominio.DestinoClass;
 import gestionDeTrasladosDominio.PaqueteClass;
 import gestionDeTrasladosEnums.TipoDeAcoplado;
+import gestionDeTrasladosEnums.TipoDeAuto;
 import gestionDeTrasladosInterfaz.GestionDeTrasladoClass;
 
 class CamionTest {
@@ -25,6 +27,35 @@ class CamionTest {
 	 
 		 assertEquals(2, gestion.getVehiculos().size());
 	       
+	}
+	
+    @Test
+    public void quePuedaTransportarUnPaqueteValido() {
+    	
+    	 CamionClass tradicional = new CamionClass(TipoDeAcoplado.Tradicional, "AAA111");
+        
+        DestinoClass destino = new DestinoClass("Juncal", "1129", "Buenos Aires");
+        
+        PaqueteClass paquete = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino);
+        
+        
+        
+        assertTrue(tradicional.puedeTransportarPaquete(paquete));
+    }
+    
+	@Test
+	void queNoSePuedanRepetirPatentes() {
+		 CamionClass tradicional = new CamionClass(TipoDeAcoplado.Tradicional, "AAA111");
+		 CamionClass remolqueArticulado = new CamionClass(TipoDeAcoplado.RemolqueArticulado, "AAA111");
+		 
+		 GestionDeTrasladoClass gestion = new GestionDeTrasladoClass();
+		 
+		 gestion.agregarVehiculo(tradicional);
+		 gestion.agregarVehiculo(remolqueArticulado);
+		 /*Suv no debería agregarse porque tiene la misam patente que Coupé*/
+		 assertEquals(1, gestion.getVehiculos().size());
+		
+	        
 	}
 	
    /*@Test

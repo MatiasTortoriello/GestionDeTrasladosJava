@@ -39,7 +39,7 @@ class AutoTest {
 	}
 	
     @Test
-    public void testAutoPuedeTransportarPaqueteValido() {
+    public void quePuedaTransportarUnPaqueteValido() {
     	
         AutoClass sedan = new AutoClass(TipoDeAuto.Sedan, "AAA123");
         
