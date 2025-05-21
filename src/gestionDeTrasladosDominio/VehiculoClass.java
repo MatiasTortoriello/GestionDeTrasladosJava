@@ -94,6 +94,10 @@ public abstract class VehiculoClass {
 	    }
 	    return pesoTotal;
 	}
+	
+	public void agregarDestino(DestinoClass destino) {
+	    this.destinos.add(destino);
+	}
 		
 	public Boolean puedeTransportarPaquete(PaqueteClass paquete) {
 

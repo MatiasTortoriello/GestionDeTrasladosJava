@@ -14,6 +14,7 @@ public class PaqueteClass {
 
 
 	public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, DestinoClass destino) {
+		
         this.alturaPaquete = altura;
         this.anchoPaquete = ancho;
         this.profundoPaquete = profundidad;

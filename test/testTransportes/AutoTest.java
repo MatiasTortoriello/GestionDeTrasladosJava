@@ -2,6 +2,8 @@ package testTransportes;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Set;
+
 import org.junit.jupiter.api.Test;
 
 import gestionDeTrasladosDominio.AutoClass;
@@ -81,7 +83,7 @@ class AutoTest {
 		
 	}
 	
-	void queNoSePuedaExcederElLimiteDePesoEnUnCoupe() {
+	void queNoSePuedaExcederElLimiteDePaquetesEnUnCoupe() {
 		AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
 		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
 		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 200.0, destino);
@@ -113,12 +115,15 @@ class AutoTest {
 	    assertFalse(coupe.puedeTransportarPaquete(paqueteIncreiblementeMisterioso));
 	}
 	
-	
-	
-	
-	
-	
-
- 
+    @Test
+    public void queSePuedaCambiarElDestinoDelPaquete() {
+    	AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
+    	DestinoClass destino1 = new DestinoClass("Juncal", "12", "Buenos Aires");
+        PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino1);
+        
+    	coupe.agregarDestino(destino1);
+        
+        assertTrue(coupe.puedeTransportarPaquete(paqueteMisterioso));
+    }
 
 }
