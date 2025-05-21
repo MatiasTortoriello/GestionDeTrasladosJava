@@ -1,9 +1,9 @@
 package gestionDeTrasladosEnums;
 
 public enum TipoDeAuto {
-	Coupe(1.5, 250.0, 20, 100),
-	Sedan(2.0, 500.0, 30, 100),
-	SUV(3.5, 600.0, 50, 100);
+	Coupe(10.0, 100.0, 20, 3), //Volumen - Peso - MaxPaquetes - MaxCiudades
+	Sedan(2.0, 500.0, 30, 5),
+	SUV(3.5, 600.0, 50, 6);
 	
 	private final Double volumenMaximo;
 	private final Double pesoMaximo;
@@ -18,20 +18,19 @@ public enum TipoDeAuto {
 		this.cantidadMaximaDeCiudades = cantidadMaximaDeCiudades;
 	}
 	
-    public double getVolumenMaximo() {
+    public Double getVolumenMaximo() {
         return volumenMaximo;
     }
 
-    public double getPesoMaximo() {
+    public Double getPesoMaximo() {
         return pesoMaximo;
     }
 
-    public int getCantidadMaximaPaquetes() {
+    public Integer getCantidadMaximaPaquetes() {
         return cantidadMaximaDePaquetes;
     }
     
     public Integer getCantidadMaximaDeCiudades() {
-		return cantidadMaximaDePaquetes;
-    	
+    	return cantidadMaximaDeCiudades;
     }
 }

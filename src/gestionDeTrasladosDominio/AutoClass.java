@@ -8,20 +8,23 @@ import gestionDeTrasladosEnums.TipoDeAuto;
 public class AutoClass extends VehiculoClass {
 	
 	private TipoDeAuto tipoDeAuto;
+	/*
+	 //Atributos que heredo de VehiculoClass
+	Double volumenDeCargaTotal;
+	Double pesoDeCargaTotal;
+	Integer maxCantidadPaquetes;
+	Integer maxCiudadesQueRecorre;
+	String patenteVehiculo;
+	protected List<PaqueteClass> paquetes = new ArrayList<>();*/
 	
-	public AutoClass(TipoDeAuto tipoDeAuto) {
+	public AutoClass(TipoDeAuto tipoDeAuto, String patenteVehiculo) {
 		super(tipoDeAuto.getVolumenMaximo(), 
 				tipoDeAuto.getPesoMaximo(), 
 				tipoDeAuto.getCantidadMaximaPaquetes(), 
-				tipoDeAuto.getCantidadMaximaDeCiudades()); //Volumen y peso totales. Maximo de ciudades que recorre y cantidad de paquetes máximos. Heredados de VehiculoClass
+				tipoDeAuto.getCantidadMaximaDeCiudades(), 
+				patenteVehiculo); //Volumen y peso totales. Cantidad de paquetes y ciudades que recorre.
 		this.tipoDeAuto = tipoDeAuto;
+		//this.patenteVehiculo = patenteVehiculo;
 	}
-
-	@Override
-	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 	
 }

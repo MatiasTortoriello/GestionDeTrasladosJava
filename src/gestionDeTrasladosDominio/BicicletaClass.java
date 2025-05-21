@@ -8,31 +8,21 @@ import gestionDeTrasladosEnums.TipoBicicleta;
 public class BicicletaClass extends VehiculoClass{
 
 	private TipoBicicleta tipoBicicleta;
-	//Hereda el List Paquetes
+	/*
+	 //Atributos que heredo de VehiculoClass
+	protected final Double volumenDeCargaTotal;
+	protected final Double pesoDeCargaTotal;
+	protected final Integer maxCantidadPaquetes;
+	protected final Integer maxCiudadesQueRecorre;
+	protected List<PaqueteClass> paquetes = new ArrayList<>();*/
 	
-	BicicletaClass(TipoBicicleta tipoBicicleta) {
-		//super(maxVolumenDeCarga, maxPesoDeCarga, maxCiudadesQueRecorre);
-		super(0.125, 15.0, 1, 2); //Volumen y peso totales. Maximo de ciudades que recorre y cantidad de paquetes máximos. Heredados de VehiculoClass
-		tipoBicicleta = this.tipoBicicleta;
+	public BicicletaClass(TipoBicicleta tipoBicicleta, String patenteVehiculo) {
+		super(tipoBicicleta.getVolumenMaximo(), 
+				tipoBicicleta.getPesoMaximo(), 
+				tipoBicicleta.getCantidadMaximaPaquetes(), 
+				tipoBicicleta.getCantidadMaximaDeCiudades(),
+				patenteVehiculo); //Volumen y peso totales. Cantidad de paquetes y ciudades que recorre. 
+		this.tipoBicicleta = tipoBicicleta;
 	}
 	
-
-	@Override
-	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
-
-		return false;
-	}
-
-	
-	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
-        if (puedeTransportarPaquete(nuevoPaquete)) {
-            paquetes.add(nuevoPaquete);
-            return true;
-        }
-        return false;
-	}
-
-	
-
-
 }

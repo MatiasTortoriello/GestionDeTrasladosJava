@@ -9,13 +9,15 @@ public class PaqueteClass {
     private Double profundoPaquete;
     private Double pesoPaquete;
     private String destinoPaquete;
+    private VehiculoClass vehiculoAsignado;
 
-    public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, String destino) {
+    public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, String destino, VehiculoClass vehiculoAsignado) {
         this.alturaPaquete = altura;
         this.anchoPaquete = ancho;
         this.profundoPaquete = profundidad;
         this.pesoPaquete = peso;
         this.destinoPaquete = destino;
+        this.vehiculoAsignado = vehiculoAsignado;
     }
     
     /////Getters y Setters/////

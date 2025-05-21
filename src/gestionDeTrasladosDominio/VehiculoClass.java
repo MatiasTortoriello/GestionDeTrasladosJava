@@ -2,7 +2,9 @@ package gestionDeTrasladosDominio;
 
 import java.security.KeyStore.TrustedCertificateEntry;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class VehiculoClass {
 	
@@ -11,19 +13,25 @@ public abstract class VehiculoClass {
 	protected final Integer maxCantidadPaquetes;
 	protected final Integer maxCiudadesQueRecorre;
 	protected List<PaqueteClass> paquetes = new ArrayList<>();
+	protected Set<String> destinos = new HashSet<>();
+	protected String patenteVehiculo; 
 	
-	/*public VehiculoClass (String patente, String marca, String modelo, Double pesoTotalQuePuedeLlevar) {
+	/*public VehiculoClass (String patente, String tipo, String marca, String modelo, Double pesoTotalQuePuedeLlevar) {
 		this.patente = patente;
+		this.tipo = tipo
 		this.marca = marca;
 		this.modelo = modelo;
 		this.pesoTotalQuePuedeLlevar = pesoTotalQuePuedeLlevar;
 	}*/
 	
-	public VehiculoClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal, Integer maxCantidadPaquetes, Integer maxCiudadesQueRecorre) {
+	public VehiculoClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal, Integer maxCantidadPaquetes, Integer maxCiudadesQueRecorre, String patenteVehiculo) {
+		
+		this.patenteVehiculo = patenteVehiculo;
 		this.volumenDeCargaTotal = volumenDeCargaTotal;
 		this.pesoDeCargaTotal = pesoDeCargaTotal;
 		this.maxCiudadesQueRecorre = maxCiudadesQueRecorre;
 		this.maxCantidadPaquetes = maxCantidadPaquetes;
+	
 	}
 	
 	 ///GETTERS Y SETTERS ////
@@ -31,7 +39,68 @@ public abstract class VehiculoClass {
 	public List<PaqueteClass> getPaquetes() {
         return paquetes;
     }
-	 
+	
+	public Set<String> getDestinos() {
+		return destinos;
+	}
+
+	public void setDestinos(Set<String> destinos) {
+		this.destinos = destinos;
+	}
+
+	public Double getVolumenDeCargaTotal() {
+		return volumenDeCargaTotal;
+	}
+
+	public Double getPesoDeCargaTotal() {
+		return pesoDeCargaTotal;
+	}
+
+	public Integer getMaxCantidadPaquetes() {
+		return maxCantidadPaquetes;
+	}
+
+	public Integer getMaxCiudadesQueRecorre() {
+		return maxCiudadesQueRecorre;
+	}
+
+	public void setPaquetes(List<PaqueteClass> paquetes) {
+		this.paquetes = paquetes;
+	}
+
+	public void setPatenteVehiculo(String patenteVehiculo) {
+		this.patenteVehiculo = patenteVehiculo;
+	}
+	
+	public String getPatenteVehiculo() {
+		return this.patenteVehiculo;
+	}
+	
+	
+	////////////OTROS METODOS/////////////////
+		
+	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
+		
+	    return paquetes.size() <= maxCantidadPaquetes &&  //Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.
+	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && //Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.
+	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && //Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.
+	            (destinos.size() < maxCiudadesQueRecorre || destinos.contains(paquete.getDestino())); //Si 
+		}
+	
+	public boolean asignarPaquete(PaqueteClass paquete) {
+        if (puedeTransportarPaquete(paquete)) {
+            paquetes.add(paquete);
+            destinos.add(paquete.getDestino());
+            return true;
+        }
+        return false;
+	}
+
+	
+	
+	
+	
+	
 	/*
 	protected String getPatente() {
 		return patente;
@@ -40,7 +109,15 @@ public abstract class VehiculoClass {
 	protected void setPatente(String patente) {
 		this.patente = patente;
 	}
-
+	
+	protected String getTipo(){
+		return tipo;
+	}
+	
+	protected void setTipo(String tipo){
+		this.tipo = tipo;
+	}
+	
 	protected String getMarca() {
 		return marca;
 	}
@@ -73,21 +150,6 @@ public abstract class VehiculoClass {
 		this.volumenTotalQuePuedeLlevar = volumenTotalQuePuedeLlevar;
 	}
 */
-	////////////OTROS METODOS/////////////////
-		
-	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
-		return true;
-	}
-	
-	public boolean asignarPaquete(PaqueteClass nuevoPaquete) {
-        if (puedeTransportarPaquete(nuevoPaquete)) {
-            paquetes.add(nuevoPaquete);
-            return true;
-        }
-        return false;
-	}
-	
-	
 
 		
 }
