@@ -50,20 +50,22 @@ class CamionTest {
 		 assertEquals(1, gestion.getVehiculos().size());    
 	}
 	
-   /*@Test
+	@Test
     public void queUnCamionNoPuedaExcederElMaximoDePaquetes() {
     	 CamionClass tradicional = new CamionClass(TipoDeAcoplado.Tradicional, "AAA111");
     	 DestinoClass destino1 = new DestinoClass("Juncal", "12", "Buenos Aires");
-    	 tradicional.agregarDestino(destino1);*/
+    	 
+    	 tradicional.agregarDestino(destino1);
        
-       /* for (int i = 0; i < 20; i++) {
-        	 PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, , destino1); /*Acá tendría que castear a un Double*/
-            /*tradicional.asignarPaquete(paqueteMisterioso);
-        }*/
+       for (Integer i = 1; i < 21; i++) {
+        	 PaqueteClass paqueteMisterioso = new PaqueteClass(i, 1.0, 1.0, 1.0, 1.1 , destino1); 
+            tradicional.asignarPaquete(paqueteMisterioso);
+            
+        }
         
-        /*PaqueteClass otroPaqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino1);
+        PaqueteClass otroPaqueteMisterioso = new PaqueteClass(21, 1.0, 1.0, 1.0, 1.0, destino1);
         assertFalse(tradicional.puedeTransportarPaquete(otroPaqueteMisterioso));
-    }*/
+    }
     
     @Test
     public void testCamionNoPuedeExcederPesoMaximo() {

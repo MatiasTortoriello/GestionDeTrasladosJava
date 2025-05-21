@@ -61,8 +61,6 @@ class AutoTest {
 		 gestion.agregarVehiculo(suv);
 		 /*Suv no debería agregarse porque tiene la misam patente que Coupé*/
 		 assertEquals(2, gestion.getVehiculos().size());
-		
-	        
 	}
 	
 	/*TEST PARA COUPE:*/
