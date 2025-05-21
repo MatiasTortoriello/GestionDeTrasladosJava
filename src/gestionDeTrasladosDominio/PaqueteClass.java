@@ -71,7 +71,7 @@ public class PaqueteClass {
     @Override
     public int hashCode() {
     	
-        return Objects.hash(getVolumen(), pesoPaquete, destinoPaquete);
+        return Objects.hash(codigoPaquete);
         
     }
 }
