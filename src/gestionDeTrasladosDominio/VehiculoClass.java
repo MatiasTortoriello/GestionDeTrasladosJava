@@ -76,7 +76,6 @@ public abstract class VehiculoClass {
 		return this.patenteVehiculo;
 	}
 	
-	
 	////////////OTROS METODOS/////////////////
 		
 	public Double volumenTotal() {

@@ -121,5 +121,14 @@ class AutoTest {
         
         assertTrue(coupe.puedeTransportarPaquete(paqueteMisterioso));
     }
+    
+    @Test
+    public void queNoPuedaSuperarElVolumenDelPaquete() {
+    	AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
+    	DestinoClass destino1 = new DestinoClass("Juncal", "120", "Buenos Aires");
+        PaqueteClass paqueteMisterioso = new PaqueteClass(01, 20.0, 10.0, 10.0, 1.0, destino1);
+    
+        assertFalse(coupe.puedeTransportarPaquete(paqueteMisterioso));
+    }
 
 }
