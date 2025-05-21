@@ -83,7 +83,7 @@ class AutoTest {
 		
 	}
 	
-	void queNoSePuedaExcederElLimiteDePaquetesEnUnCoupe() {
+	void queNoSePuedaExcederElLimiteDePesoEnUnCoupe() {
 		AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
 		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
 		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 200.0, destino);
