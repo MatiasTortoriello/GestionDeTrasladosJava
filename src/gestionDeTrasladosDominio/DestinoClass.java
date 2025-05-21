@@ -13,35 +13,28 @@ public class DestinoClass {
 		
 	}
 
-
 	public String getCalleDestino() {
 		return calleDestino;
 	}
-
 
 	public void setCalleDestino(String calleDestino) {
 		this.calleDestino = calleDestino;
 	}
 
-
 	public String getNumeroDestino() {
 		return numeroDestino;
 	}
-
 
 	public void setNumeroDestino(String numeroDestino) {
 		this.numeroDestino = numeroDestino;
 	}
 
-
 	public String getCiudadDestino() {
 		return ciudadDestino;
 	}
 
-
 	public void setCiudadDestino(String ciudadDestino) {
 		this.ciudadDestino = ciudadDestino;
 	}
-	
-	
+		
 }

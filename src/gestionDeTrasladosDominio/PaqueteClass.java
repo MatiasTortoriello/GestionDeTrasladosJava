@@ -11,7 +11,9 @@ public class PaqueteClass {
     private String destinoPaquete;
     private VehiculoClass vehiculoAsignado;
 
-    public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, String destino, VehiculoClass vehiculoAsignado) {
+
+
+	public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, String destino, VehiculoClass vehiculoAsignado) {
         this.alturaPaquete = altura;
         this.anchoPaquete = ancho;
         this.profundoPaquete = profundidad;
@@ -37,6 +39,16 @@ public class PaqueteClass {
     public String getDestino() {
         return destinoPaquete;
     }
+    
+    public VehiculoClass getVehiculoAsignado() {
+		return vehiculoAsignado;
+	}
+
+	public void setVehiculoAsignado(VehiculoClass vehiculoAsignado) {
+		this.vehiculoAsignado = vehiculoAsignado;
+	}
+    
+    
     
 
     //Otros Métodos

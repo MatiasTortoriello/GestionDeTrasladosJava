@@ -10,22 +10,23 @@ import gestionDeTrasladosDominio.VehiculoClass;
 public class GestionDeTrasladoClass {
 	
 	  private final Set<VehiculoClass> listaVehiculos = new HashSet<>();
-	  private static Set<String> listaDePatentes = new HashSet<>();
+	  //private static Set<String> listaDePatentes = new HashSet<>();
 
-	    public boolean agregarTransporte(VehiculoClass vehiculo) {
-	    	if(listaDePatentes.contains(vehiculo.getPatenteVehiculo())) {
-	    		
+	  public GestionDeTrasladoClass() {
+		  
+	  }
+	  
+	  public boolean agregarVehiculo(VehiculoClass vehiculo) {
+	    	if(listaVehiculos.contains(vehiculo.getPatenteVehiculo())) {
+	    		//Si entra acá, quiere decir que la patente está duplicada y no se puede agregar.
+	    		System.out.println("Esta patente ya existe: " + vehiculo.getPatenteVehiculo());
+	    		return false;
 	    	}
-	        return listaVehiculos.add(vehiculo); //Arranca a agregar vehículos en esta lista, corroborando que no estén repetidos
+	    	//Si no entra al if, entonces la patente es única y se puede argegar
+	        return listaVehiculos.add(vehiculo);
 	    }
 
-	    public Set<VehiculoClass> getTransportes() {
+	  public Set<VehiculoClass> getVehiculos() {
 	        return listaVehiculos;
 	    }
-	    
-	/*public GestionDeTrasladoClass() {
-        listaVehiculos = new HashSet<>();
-        paquetesAsignados = new HashSet<>();
-	}*/
-	
 }

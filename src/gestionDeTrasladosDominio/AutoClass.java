@@ -27,4 +27,17 @@ public class AutoClass extends VehiculoClass {
 		//this.patenteVehiculo = patenteVehiculo;
 	}
 	
+	@Override
+	public boolean equals(Object auto) {
+	    if (this == auto) return true;
+	    if (!(auto instanceof AutoClass)) return false;
+	    AutoClass otroAuto = (AutoClass) auto;
+	    return this.getPatenteVehiculo().equals(otroAuto.getPatenteVehiculo());
+	}
+
+	@Override
+	public int hashCode() {
+	    return getPatenteVehiculo().hashCode();
+	}
+	
 }

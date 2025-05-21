@@ -12,7 +12,7 @@ public abstract class VehiculoClass {
 	protected final Double pesoDeCargaTotal;
 	protected final Integer maxCantidadPaquetes;
 	protected final Integer maxCiudadesQueRecorre;
-	protected List<PaqueteClass> paquetes = new ArrayList<>();
+	protected Set<PaqueteClass> listaPaquetes = new HashSet<>();
 	protected Set<String> destinos = new HashSet<>();
 	protected String patenteVehiculo; 
 	
@@ -31,13 +31,14 @@ public abstract class VehiculoClass {
 		this.pesoDeCargaTotal = pesoDeCargaTotal;
 		this.maxCiudadesQueRecorre = maxCiudadesQueRecorre;
 		this.maxCantidadPaquetes = maxCantidadPaquetes;
+		this.patenteVehiculo = patenteVehiculo;
 	
 	}
 	
 	 ///GETTERS Y SETTERS ////
 	
-	public List<PaqueteClass> getPaquetes() {
-        return paquetes;
+	public Set<PaqueteClass> getPaquetes() {
+        return listaPaquetes;
     }
 	
 	public Set<String> getDestinos() {
@@ -64,8 +65,8 @@ public abstract class VehiculoClass {
 		return maxCiudadesQueRecorre;
 	}
 
-	public void setPaquetes(List<PaqueteClass> paquetes) {
-		this.paquetes = paquetes;
+	public void setPaquetes(Set<PaqueteClass> paquetes) {
+		this.listaPaquetes = paquetes;
 	}
 
 	public void setPatenteVehiculo(String patenteVehiculo) {
@@ -79,26 +80,9 @@ public abstract class VehiculoClass {
 	
 	////////////OTROS METODOS/////////////////
 		
-	public boolean puedeTransportarPaquete(PaqueteClass paquete) {
-		
-	    return paquetes.size() <= maxCantidadPaquetes &&  //Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.
-	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && //Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.
-	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && //Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.
-	            (destinos.size() < maxCiudadesQueRecorre || destinos.contains(paquete.getDestino())); //Si 
-		}
-	
-	public boolean asignarPaquete(PaqueteClass paquete) {
-        if (puedeTransportarPaquete(paquete)) {
-            paquetes.add(paquete);
-            destinos.add(paquete.getDestino());
-            return true;
-        }
-        return false;
-	}
-	
 	public Double volumenTotal() {
 	    Double volumenTotal = 0.0;
-	    for (PaqueteClass paquete : paquetes) {
+	    for (PaqueteClass paquete : listaPaquetes) {
 	        volumenTotal = volumenTotal + paquete.getVolumen();
 	    }
 	    return volumenTotal;
@@ -106,16 +90,31 @@ public abstract class VehiculoClass {
 
 	public Double pesoTotal() {
 	    Double pesoTotal = 0.0;
-	    for (PaqueteClass paquete : paquetes) {
+	    for (PaqueteClass paquete : listaPaquetes) {
 	        pesoTotal = pesoTotal + paquete.getPeso();
 	    }
 	    return pesoTotal;
 	}
+		
+	public Boolean puedeTransportarPaquete(PaqueteClass paquete) {
+		
+	    return listaPaquetes.size() <= maxCantidadPaquetes &&  //Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.
+	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && //Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.
+	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && //Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.
+	            (listaPaquetes.contains(paquete)) && //Si el paquete no se encuentra ya dentro de la lista de paquetes
+	            (destinos.size() < maxCiudadesQueRecorre || destinos.contains(paquete.getDestino())); 
+		}
+	
+	public Boolean asignarPaquete(PaqueteClass paquete) {
+        if (puedeTransportarPaquete(paquete)) {
+            listaPaquetes.add(paquete);
+            paquete.setVehiculoAsignado(this);
+            destinos.add(paquete.getDestino());
+            return true;
+        }
+        return false;
+	}
 
-	
-	
-	
-	
 	
 	/*
 	protected String getPatente() {

@@ -1,6 +1,7 @@
 package gestionDeTrasladosEnums;
 
 public enum TipoDeAuto {
+	
 	Coupe(10.0, 100.0, 20, 3), //Volumen - Peso - MaxPaquetes - MaxCiudades
 	Sedan(2.0, 500.0, 30, 5),
 	SUV(3.5, 600.0, 50, 6);
