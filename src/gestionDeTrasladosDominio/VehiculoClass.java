@@ -100,8 +100,7 @@ public abstract class VehiculoClass {
 	}
 		
 	public Boolean puedeTransportarPaquete(PaqueteClass paquete) {
-
-		    
+  
 	    return listaPaquetes.size() < maxCantidadPaquetes &&  /*Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.*/
 	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && /*Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.*/
 	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && /*Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.*/
@@ -118,7 +117,6 @@ public abstract class VehiculoClass {
         return false;
 	}
 
-	
 	@Override
 	public boolean equals(Object vehiculo) {
 	    if (this == vehiculo) return true;
@@ -136,47 +134,36 @@ public abstract class VehiculoClass {
 	protected String getPatente() {
 		return patente;
 	}
-
 	protected void setPatente(String patente) {
 		this.patente = patente;
 	}
-	
 	protected String getTipo(){
 		return tipo;
 	}
-	
 	protected void setTipo(String tipo){
 		this.tipo = tipo;
 	}
-	
 	protected String getMarca() {
 		return marca;
 	}
-
 	protected void setMarca(String marca) {
 		this.marca = marca;
 	}
-
 	protected String getModelo() {
 		return modelo;
 	}
-
 	protected void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
-
 	protected Double getPesoTotalQuePuedeLlevar() {
 		return pesoTotalQuePuedeLlevar;
 	}
-
 	protected void setPesoTotalQuePuedeLlevar(Double pesoTotalQuePuedeLlevar) {
 		this.pesoTotalQuePuedeLlevar = pesoTotalQuePuedeLlevar;
 	}
-	
 	public Double getVolumenTotalQuePuedeLlevar() {
 		return volumenTotalQuePuedeLlevar;
 	}
-
 	public void setVolumenTotalQuePuedeLlevar(Double volumenTotalQuePuedeLlevar) {
 		this.volumenTotalQuePuedeLlevar = volumenTotalQuePuedeLlevar;
 	}
