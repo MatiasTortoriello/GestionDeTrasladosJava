@@ -12,6 +12,10 @@ class BicicletaTest {
 	@Test
 	void queSePuedanCrearTodosLosTiposDeBici() {
 		BicicletaClass mountainBike = new BicicletaClass(TipoBicicleta.MountainBike, "AAA111");
+		BicicletaClass playera = new BicicletaClass(TipoBicicleta.Playera, "AAB112");
+		BicicletaClass tradicional = new BicicletaClass(TipoBicicleta.Tradicional, "AAC113");
+		
+		
 		
 	}
 
