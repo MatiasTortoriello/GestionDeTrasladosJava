@@ -59,7 +59,7 @@ class AutoTest {
 	void queSePuedanCargarPaquetesEnUnCoupe() {
 		AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
 		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
-		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino, coupe);
+		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino);
 		
 		Boolean cargaDePaquete = coupe.asignarPaquete(paqueteMisterioso);
 	
@@ -70,7 +70,7 @@ class AutoTest {
 	void queNoSePuedaExcederElLimiteDePesoEnUnCoupe() {
 		AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
 		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
-		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 200.0, destino, coupe);
+		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 200.0, destino);
 		/*El Paquete pesa 200 y el coupe sólo puede llevar 100*/	
 		assertFalse(coupe.puedeTransportarPaquete(paqueteMisterioso));
 		
@@ -84,10 +84,10 @@ class AutoTest {
 	    DestinoClass destino3 = new DestinoClass("Perón", "156", "Rosario");
 	    DestinoClass destino4 = new DestinoClass("Córdoba", "250", "Córdoba");
 
-	    PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino1, coupe);
-	    PaqueteClass paqueteMuyMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino2, coupe);
-	    PaqueteClass paqueteMasMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino3, coupe);
-	    PaqueteClass paqueteIncreiblementeMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino4, coupe);
+	    PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino1);
+	    PaqueteClass paqueteMuyMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino2);
+	    PaqueteClass paqueteMasMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino3);
+	    PaqueteClass paqueteIncreiblementeMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino4);
 
 	    coupe.asignarPaquete(paqueteMisterioso);
 	    coupe.asignarPaquete(paqueteMuyMisterioso);

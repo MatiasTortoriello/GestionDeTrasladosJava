@@ -9,17 +9,18 @@ public class PaqueteClass {
     private Double profundoPaquete;
     private Double pesoPaquete;
     private DestinoClass destinoPaquete;
-    private VehiculoClass vehiculoAsignado;
 
 
 
-	public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, DestinoClass destino, VehiculoClass vehiculoAsignado) {
+
+	public PaqueteClass(Double altura, Double ancho, Double profundidad, Double peso, DestinoClass destino) {
+		
         this.alturaPaquete = altura;
         this.anchoPaquete = ancho;
         this.profundoPaquete = profundidad;
         this.pesoPaquete = peso;
         this.destinoPaquete = destino;
-        this.vehiculoAsignado = vehiculoAsignado;
+
     }
     
     /////Getters y Setters/////
@@ -40,13 +41,13 @@ public class PaqueteClass {
         return destinoPaquete;
     }
     
-    public VehiculoClass getVehiculoAsignado() {
+    /*public VehiculoClass getVehiculoAsignado() {
 		return vehiculoAsignado;
 	}
 
 	public void setVehiculoAsignado(VehiculoClass vehiculoAsignado) {
 		this.vehiculoAsignado = vehiculoAsignado;
-	}
+	}*/
     
     
     
