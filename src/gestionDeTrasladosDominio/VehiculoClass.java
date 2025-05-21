@@ -26,7 +26,6 @@ public abstract class VehiculoClass {
 	
 	public VehiculoClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal, Integer maxCantidadPaquetes, Integer maxCiudadesQueRecorre, String patenteVehiculo) {
 		
-		this.patenteVehiculo = patenteVehiculo;
 		this.volumenDeCargaTotal = volumenDeCargaTotal;
 		this.pesoDeCargaTotal = pesoDeCargaTotal;
 		this.maxCiudadesQueRecorre = maxCiudadesQueRecorre;

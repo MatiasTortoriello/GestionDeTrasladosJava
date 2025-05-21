@@ -52,7 +52,11 @@ class BicicletaTest {
 	void queNoSePuedaCargarMasPesoDelRequeridoEnUnaBici() {
 		BicicletaClass tradicional = new BicicletaClass(TipoBicicleta.Tradicional, "AAA111");
 		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
-		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino, tradicional);
+		PaqueteClass paqueteMuyPesado = new PaqueteClass(1.0, 1.0, 1.0, 40.0, destino, tradicional);
+		
+		tradicional.asignarPaquete(paqueteMuyPesado);
+		/*El paquete pesa 40kg y la tradicional sólo lleva hasta 15*/
+		  assertFalse(tradicional.asignarPaquete(paqueteMuyPesado));
 		
 	}
 	

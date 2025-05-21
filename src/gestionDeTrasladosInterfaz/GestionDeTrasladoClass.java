@@ -16,13 +16,17 @@ public class GestionDeTrasladoClass {
 		  
 	  }
 	  
-	  public boolean agregarVehiculo(VehiculoClass vehiculo) {
+	  /*public boolean agregarVehiculo(VehiculoClass vehiculo) {
 	    	if(listaVehiculos.contains(vehiculo.getPatenteVehiculo())) {
-	    		//Si entra acá, quiere decir que la patente está duplicada y no se puede agregar.
-	    		System.out.println("Esta patente ya existe: " + vehiculo.getPatenteVehiculo());
+	    		/*Si entra acá, quiere decir que la patente está duplicada y no se puede agregar.*/
+	    		/*System.out.println("Esta patente ya existe: " + vehiculo.getPatenteVehiculo());
 	    		return false;
-	    	}
-	    	//Si no entra al if, entonces la patente es única y se puede argegar
+	    	}*/
+	    	/*Si no entra al if, entonces la patente es única y se puede argegar*/
+	       /* return listaVehiculos.add(vehiculo);
+	    }*/
+	  
+	  public boolean agregarVehiculo(VehiculoClass vehiculo) {
 	        return listaVehiculos.add(vehiculo);
 	    }
 
