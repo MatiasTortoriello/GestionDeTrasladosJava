@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import gestionDeTrasladosDominio.VehiculoClass;
-import gestionDeTrasladosDominio.ViajeClass;
+
 
 public class GestionDeTrasladoClass {
 	
@@ -13,7 +13,9 @@ public class GestionDeTrasladoClass {
 	  private static Set<String> listaDePatentes = new HashSet<>();
 
 	    public boolean agregarTransporte(VehiculoClass vehiculo) {
-	    	if(listaDePatentes.contains(vehiculo.getPatenteVehiculo()))
+	    	if(listaDePatentes.contains(vehiculo.getPatenteVehiculo())) {
+	    		
+	    	}
 	        return listaVehiculos.add(vehiculo); //Arranca a agregar vehículos en esta lista, corroborando que no estén repetidos
 	    }
 

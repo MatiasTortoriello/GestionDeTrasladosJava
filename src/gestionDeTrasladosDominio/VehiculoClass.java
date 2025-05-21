@@ -95,6 +95,22 @@ public abstract class VehiculoClass {
         }
         return false;
 	}
+	
+	public Double volumenTotal() {
+	    Double volumenTotal = 0.0;
+	    for (PaqueteClass paquete : paquetes) {
+	        volumenTotal = volumenTotal + paquete.getVolumen();
+	    }
+	    return volumenTotal;
+	}
+
+	public Double pesoTotal() {
+	    Double pesoTotal = 0.0;
+	    for (PaqueteClass paquete : paquetes) {
+	        pesoTotal = pesoTotal + paquete.getPeso();
+	    }
+	    return pesoTotal;
+	}
 
 	
 	
