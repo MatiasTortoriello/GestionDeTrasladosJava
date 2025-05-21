@@ -107,7 +107,7 @@ public abstract class VehiculoClass {
 	public Boolean asignarPaquete(PaqueteClass paquete) {
         if (puedeTransportarPaquete(paquete)) {
             listaPaquetes.add(paquete);
-            paquete.setVehiculoAsignado(this);
+            /*paquete.setVehiculoAsignado(this);*/
             destinos.add(paquete.getDestino());
             return true;
         }

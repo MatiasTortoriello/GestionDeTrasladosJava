@@ -25,7 +25,7 @@ class BicicletaTest {
 	void queSePuedanCargarPaquetesEnUnaPlayera() {
 		BicicletaClass playera = new BicicletaClass(TipoBicicleta.Playera, "AAA111");
 		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
-		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino, playera);
+		PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino);
 		
 		Boolean cargaDePaquete = playera.asignarPaquete(paqueteMisterioso);
 	
@@ -39,8 +39,8 @@ class BicicletaTest {
 	    DestinoClass destino2 = new DestinoClass("Alberti", "32", "La Plata");
 
 
-	    PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino1, playera);
-	    PaqueteClass paqueteMuyMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino2, playera);
+	    PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino1);
+	    PaqueteClass paqueteMuyMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino2);
 
 
 	    playera.asignarPaquete(paqueteMisterioso);
@@ -52,7 +52,7 @@ class BicicletaTest {
 	void queNoSePuedaCargarMasPesoDelRequeridoEnUnaBici() {
 		BicicletaClass tradicional = new BicicletaClass(TipoBicicleta.Tradicional, "AAA111");
 		DestinoClass destino = new DestinoClass("Juncal", "12", "Buenos Aires");
-		PaqueteClass paqueteMuyPesado = new PaqueteClass(1.0, 1.0, 1.0, 40.0, destino, tradicional);
+		PaqueteClass paqueteMuyPesado = new PaqueteClass(1.0, 1.0, 1.0, 40.0, destino);
 		
 		tradicional.asignarPaquete(paqueteMuyPesado);
 		/*El paquete pesa 40kg y la tradicional sólo lleva hasta 15*/
