@@ -26,7 +26,6 @@ public abstract class VehiculoClass {
 	
 	public VehiculoClass(Double volumenDeCargaTotal, Double pesoDeCargaTotal, Integer maxCantidadPaquetes, Integer maxCiudadesQueRecorre, String patenteVehiculo) {
 		
-		this.patenteVehiculo = patenteVehiculo;
 		this.volumenDeCargaTotal = volumenDeCargaTotal;
 		this.pesoDeCargaTotal = pesoDeCargaTotal;
 		this.maxCiudadesQueRecorre = maxCiudadesQueRecorre;
@@ -95,6 +94,10 @@ public abstract class VehiculoClass {
 	    }
 	    return pesoTotal;
 	}
+	
+	public void agregarDestino(DestinoClass destino) {
+	    this.destinos.add(destino);
+	}
 		
 	public Boolean puedeTransportarPaquete(PaqueteClass paquete) {
 
@@ -117,11 +120,11 @@ public abstract class VehiculoClass {
 
 	
 	@Override
-	public boolean equals(Object obj) {
-	    if (this == obj) return true;
-	    if (obj == null || getClass() != obj.getClass()) return false;
-	    VehiculoClass that = (VehiculoClass) obj;
-	    return patenteVehiculo.equals(that.patenteVehiculo);
+	public boolean equals(Object vehiculo) {
+	    if (this == vehiculo) return true;
+	    if (vehiculo == null || getClass() != vehiculo.getClass()) return false;
+	    VehiculoClass nuevoVehiculo = (VehiculoClass) vehiculo;
+	    return patenteVehiculo.equals(nuevoVehiculo.patenteVehiculo);
 	}
 
 	@Override

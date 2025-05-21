@@ -37,18 +37,22 @@ public class DestinoClass {
 		this.ciudadDestino = ciudadDestino;
 	}
 	
-	/*@Override
-	public boolean equals(Object obj) {
-	    if (this == obj) return true;
-	    if (obj == null || getClass() != obj.getClass()) return false;
+	@Override
+	public boolean equals(Object destino) {
+	    if (this == destino) return true;
+	    if (destino == null || getClass() != destino.getClass()) return false;
 
-	    DestinoClass other = (DestinoClass) obj;
-	    return ciudadDestino != null && ciudadDestino.equalsIgnoreCase(other.ciudadDestino);
+	    DestinoClass otroDestino = (DestinoClass) destino;
+	    return ciudadDestino != null && ciudadDestino.equalsIgnoreCase(otroDestino.ciudadDestino);
 	}
 
 	@Override
 	public int hashCode() {
-	    return ciudadDestino != null ? ciudadDestino.toLowerCase().hashCode() : 0;
-	}*/
+	    if (ciudadDestino != null) {
+	        return ciudadDestino.toLowerCase().hashCode();
+	    } else {
+	        return 0;
+	    }
+	}
 		
 }

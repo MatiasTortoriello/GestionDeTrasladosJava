@@ -2,6 +2,8 @@ package testTransportes;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Set;
+
 import org.junit.jupiter.api.Test;
 
 import gestionDeTrasladosDominio.AutoClass;
@@ -35,6 +37,20 @@ class AutoTest {
 		 assertEquals(3, gestion.getVehiculos().size());
 	        
 	}
+	
+    @Test
+    public void testAutoPuedeTransportarPaqueteValido() {
+    	
+        AutoClass sedan = new AutoClass(TipoDeAuto.Sedan, "AAA123");
+        
+        DestinoClass destino = new DestinoClass("Juncal", "1129", "Buenos Aires");
+        
+        PaqueteClass paquete = new PaqueteClass(1.0, 1.0, 1.0, 3.0, destino);
+        
+        
+        
+        assertTrue(sedan.puedeTransportarPaquete(paquete));
+    }
 	
 	@Test
 	void queNoSePuedanRepetirPatentes() {
@@ -99,12 +115,15 @@ class AutoTest {
 	    assertFalse(coupe.puedeTransportarPaquete(paqueteIncreiblementeMisterioso));
 	}
 	
-	
-	
-	
-	
-	
-
- 
+    @Test
+    public void queSePuedaCambiarElDestinoDelPaquete() {
+    	AutoClass coupe = new AutoClass(TipoDeAuto.Coupe, "AAA111");
+    	DestinoClass destino1 = new DestinoClass("Juncal", "12", "Buenos Aires");
+        PaqueteClass paqueteMisterioso = new PaqueteClass(1.0, 1.0, 1.0, 1.0, destino1);
+        
+    	coupe.agregarDestino(destino1);
+        
+        assertTrue(coupe.puedeTransportarPaquete(paqueteMisterioso));
+    }
 
 }
