@@ -10,7 +10,6 @@ public enum TipoDeAcoplado {
 		private final Integer cantidadMaximaDePaquetes;
 		private final Integer cantidadMaximaDeCiudades;
 		
-		
 		private TipoDeAcoplado(Double volumenMaximo, Double pesoMaximo, Integer cantidadMaximaDePaquetes, Integer cantidadMaximaDeCiudades) {
 			this.volumenMaximo = volumenMaximo;
 			this.pesoMaximo = pesoMaximo;
@@ -34,5 +33,3 @@ public enum TipoDeAcoplado {
 	    	return cantidadMaximaDeCiudades;
 	    }
 	}
-
-

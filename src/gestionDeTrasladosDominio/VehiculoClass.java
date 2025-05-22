@@ -39,39 +39,30 @@ public abstract class VehiculoClass {
 	public Set<PaqueteClass> getPaquetes() {
         return listaPaquetes;
     }
-	
 	public Set<DestinoClass> getDestinos() {
 		return destinos;
 	}
-
 	public void setDestinos(Set<DestinoClass> destinos) {
 		this.destinos = destinos;
 	}
-
 	public Double getVolumenDeCargaTotal() {
 		return volumenDeCargaTotal;
 	}
-
 	public Double getPesoDeCargaTotal() {
 		return pesoDeCargaTotal;
 	}
-
 	public Integer getMaxCantidadPaquetes() {
 		return maxCantidadPaquetes;
 	}
-
 	public Integer getMaxCiudadesQueRecorre() {
 		return maxCiudadesQueRecorre;
 	}
-
 	public void setPaquetes(Set<PaqueteClass> paquetes) {
 		this.listaPaquetes = paquetes;
 	}
-
 	public void setPatenteVehiculo(String patenteVehiculo) {
 		this.patenteVehiculo = patenteVehiculo;
 	}
-	
 	public String getPatenteVehiculo() {
 		return this.patenteVehiculo;
 	}
@@ -103,7 +94,7 @@ public abstract class VehiculoClass {
 	    return listaPaquetes.size() < maxCantidadPaquetes &&  /*Si la cantidad de paquetes es menor o igual a la cantidad máxima de paquetes que puede llevar el vehículo.*/
 	            (pesoTotal() + paquete.getPeso()) <= pesoDeCargaTotal && /*Si el último paquete que se carga más el peso total de todos los paquetes es menor o igual a la cantidad de peso que puede cargarse.*/
 	            (volumenTotal() + paquete.getVolumen()) <= volumenDeCargaTotal && /*Si el volumen del último paquete sumado al volumen total que ya existe es menor o igual al volumen total que puede llevar el vehículo.*/
-	            (destinos.size() < maxCiudadesQueRecorre); /*Si el tamaño de la lista de ciudades es menor o igual a las ciudades que recorre*/
+	            (destinos.size() <= maxCiudadesQueRecorre); /*Si el tamaño de la lista de ciudades es menor o igual a las ciudades que recorre*/
 		}
 	
 	public Boolean asignarPaquete(PaqueteClass paquete) {
