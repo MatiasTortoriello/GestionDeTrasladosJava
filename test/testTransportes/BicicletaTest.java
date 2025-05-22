@@ -6,9 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import gestionDeTrasladosDominio.AutoClass;
 import gestionDeTrasladosDominio.BicicletaClass;
+import gestionDeTrasladosDominio.CamionClass;
 import gestionDeTrasladosDominio.DestinoClass;
 import gestionDeTrasladosDominio.PaqueteClass;
 import gestionDeTrasladosEnums.TipoBicicleta;
+import gestionDeTrasladosEnums.TipoDeAcoplado;
 import gestionDeTrasladosEnums.TipoDeAuto;
 import gestionDeTrasladosInterfaz.GestionDeTrasladoClass;
 
@@ -27,6 +29,19 @@ class BicicletaTest {
 		gestion.agregarVehiculo(tradicional);
 		 
 		 assertEquals(3, gestion.getVehiculos().size());
+	}
+	
+	@Test
+	public void queNoSePuedanRepetirPatentesEnLasBicicletas() {
+		 BicicletaClass playera = new BicicletaClass(TipoBicicleta.Playera, "AAA111");
+		 BicicletaClass tradicional = new BicicletaClass(TipoBicicleta.Tradicional, "AAA111");
+		 
+		 GestionDeTrasladoClass gestion = new GestionDeTrasladoClass();
+		 
+		 gestion.agregarVehiculo(tradicional);
+		 gestion.agregarVehiculo(playera);
+		 /*Playera no debería agregarse porque tiene la misam patente que Tradicional*/
+		 assertEquals(1, gestion.getVehiculos().size());  
 	}
 	
 	@Test
